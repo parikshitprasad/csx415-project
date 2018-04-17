@@ -1,0 +1,132 @@
+---
+title: "Home Sale Price Prediction"
+subtitle: "Formal Problem Statement"
+author: "Parikshit Prasad"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: TRUE
+---
+<style type="text/css">
+
+h1.title {
+  font-size: 38px;
+  color: DarkRed;
+  text-align: center;
+}
+h3.subtitle { 
+    font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author, h3.subtitle { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+</style>
+
+```{r echo = FALSE}
+client <- 'Real Easy, Inc.'
+```
+
+#### Prepared for: `r client`
+
+### Goals
+The goal of this project is to empower home sellers and buyers with the best home price estimation tool. This is inline with the company's vision of making real estate transactions as easy as possible for home sellers and buyers. 
+
+
+### Background
+`r client` is a leading player in online real estate transactions business. Their vision is to make real estate transactions as easy as possible for home sellers and buyers. They have more than 100 million residential properties in their website covering all 50 states of the US. They have a user base of about 20 million users with more than 10 million unique visitors viewing properties in their website. In 2017, more than 45,000 home sellers and buyers used their services for real estate transactions. 
+
+`r client` did a consumer research study in **Q1** of **2017** to understand the key pain points of potential sellers and buyers. They surveyed about 50 - 100 potential sellers and buyers in different markets. One of the key pain points the study pointed out is that the sellers and buyers are not sure about the true value of the property - “*What is the fair sale price for this property?*” is one of the main questions consumers have. 
+
+`r client` have approached our team to develop an algorithm to estimate fair sale price of a property currently on market with a median error rate of < 1.5% and that of off-market properties with median error rate < 4%. This will boost consumer’s confidence in `r client`'s real estate technical products and help in increasing their user base and revenue. This will be an invaluable tool for sellers to come up with their listing strategy. This tool would help minimize buyer's remorse by boosting their confidence when they make offers. 
+
+Predicting sales price is a tricky problem to solve. Lot of companies have attempted to solve this problem. [Redfin](https://www.redfin.com) has recently come up with a [home price esitimation](https://www.redfin.com/redfin-estimate) product which has a median error rate of < 1.82 % for on market properties. [Zillow](https://www.zillow.com) has a similar home price estimation product, [Zestimate](https://www.zillow.com/zestimate/#acc) which has a median error rate of 4.6%. 
+
+
+
+### Objectives
+The main objectives of this project are listed below: 
+
+* Develop an algorithm to estimate fair sale price of a property currently on market with a median error rate of < 1.5% and that of off-market properties with median error rate < 4%.
+* It should be easy to update models in production. 
+* Propose a reasonable frequency to recompute home price estimates in production. This must be figured out based on analysis of the data.  
+
+### Business Perspective
+Estimating home price is a tricky problem. Our competitors, Redfin and Zillow, have spent several months and years in coming up with a decent home estimation product. Building this on our own definitely has a steep cost. It is extremely critical, however, to have this product available to home sellers and buyers to have a comparable service offerings wrt our competitors. Moreover, this product has a strong potential to increase our user base by 20% and revenue by 10%. `r client` have evaluated using a third party solution, [House Canary](https://www.housecanary.com/). This  is expensive in the long run directly affecting their revenue. Considering all this, management decided last month to fund this project through Q3 of 2018 for a budget of *$500,000*. 
+
+### Deliverables
+The deliverables include all code, assets and documention necessary for `r client` to run this in production. The following table lists some of the main deliverables: 
+
+* **Model**: Predictive model that estimates the home price for a property. This will be trained and validated using past data. All model development will happen in R. 
+* **Code**: The code will be managed in github and fully owned by `r client`. 
+* **Reports**: R markdown reports will be submitted to `r client` weekly, explaining the status of the project. 
+* **Documents**: All analysis and observations will be documented in confluence and fully owned by `r client`. 
+* **Data**: Data provided by `r client` and any data generated directly or indirectly through this data will be fully owned by `r client`. All required data should be hosted in Big Query. 
+
+### Project Timeline
+The table below shows some of the key milestones in the project. R markdown reports will be shared at the end of every week showing the progress of the project. 
+
+```{r echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+timeline <- data.frame(
+  Date=c("04-10-2018", "04-17-2018", "04-23-2018", "04-30-2018", "05-07-2018", "05-14-2018", "05-21-2018", "05-28-2018", "06-05-2018"),
+  Milestone=c(
+    "Formal Problem Statement",
+    "Clean data and identify core features to use",
+    "Predictive Model",
+    "Test Model", 
+    "Validate Model",
+    "Stakeholders Acceptance",
+    "Deploy product for 10% of users",
+    "Full product rollout",
+    "Closure"
+  )
+)
+
+kable(timeline, "html") %>%
+  kable_styling("striped", full_width = F) %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, width = "30em")
+```
+
+### Risks
+
+* **Data availability**: In order to estimate accurate home prices, it is critical to have addresses and comparable sales for properties. As of now, we do not have this information. Instead, we have just a set of features about the property. If we use just this data, the assumption is that location does not have impact on the property price, which is not correct. Generating this data is in the pipeline as part of data gathering project, which is not in scope of this project. If that project gets delayed, it will impact this project. 
+* **Service resources**: We need the help of Service team to consume the model in production. It is critical to allocate 2 engineers full time in the next quarter to support this work. 
+
+### Stakeholders
+The following table lists key stakeholders of this project and how frequently they will be informed about the project progress. 
+
+```{r echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+timeline <- data.frame(
+  Role=c("Analytics Product Manager", "Data Science Engineering Manager", "Vice President, Engineering", "Vice President, Product", "QA Manager"),
+  "Update Frequency"=c(
+    "Daily",
+    "Daily",
+    "Monthly", 
+    "Monthly", 
+    "Weekly")
+)
+
+kable(timeline, "html") %>%
+  kable_styling("striped", full_width = F) %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, width = "30em")
+```
+
