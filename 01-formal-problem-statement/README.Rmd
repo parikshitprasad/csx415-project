@@ -1,0 +1,132 @@
+---
+title: "Assignment: Formal Problem Statement"
+author: "cbrown"
+date: "April 4, 2018"
+output: html_document
+---
+
+## Assignment One: Formal Problem Statement (*FPS*)
+
+This assignment is to:
+
+ - Develop an **Rmarkdown Template** for a *Formal Problem Statement* , and
+ - Use that template to write a *Formal Problem Statement* for your class project.
+   - Name it *formal-problem-statement.(md|html|pdf)* and place it in the 
+    `01-formal-problem-statement` folder. 
+
+
+To recieve credit, you must knit the **FPS** as HTML 
+document. Submit it and your Rmarkdown template in this assignment folder 
+and push those back to your fork of the assignments folder on github.
+ 
+**Each** individual should develop their own RMarkdown template and use it to 
+evaluate their own project. You should not submit identical *FPS*s for the 
+team. However, you are encouraged to discuss this assignment with your 
+teammates and classmates through the classes google group. 
+
+As you work through writing of your *Formal Problem Statement*, you will likely
+discover something that you left out of or something that willl cause you to 
+want to reorganize your template. GREAT! Revise your template. Remember this 
+template is an asset you are developing that you can use in your career.
+
+
+### Notes
+
+ * This is a formal business communication. Therefore, it should be written 
+   clearly in English. You should proof read your *FPS*. It 
+   should be free of grammar, spelling and punctuation errors.
+   
+ * Any submission that simply creates a list based on the **Background** 
+   section will fail this assignments. Fail, as in, recieve no credit. There are
+   no points for demonstrating laziness ever.
+   
+ * Some proposed class projects do not have a readily identified business 
+   user. IF this is your case, you need to use your imagination and identify for 
+   me the **who** and **why** this is being done. Go ahead, invent a company 
+   and a manager and a product owner. Make reasonable calculations as to the
+   benefits and risks, etc.
+ 
+
+
+## References
+
+ - [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown)
+ - [Document Template](https://rmarkdown.rstudio.com/developer_document_templates.html)
+
+
+## Background
+
+Communication between the various roles in the organization involved in a data
+science project is crucial. There is no more important piece of that 
+communictation than the *Formal Problem Statement* (*FPS*). The FPS serves a 
+number of purposes. It:
+
+ - Forces the technical manager to think through all aspects of the problem
+ - Provides acknowledgement to the "business" that the technical staff 
+   groks the intent and requirements of the business
+ - Provides a quick win as it indicates to the business that the technical side 
+   is invested in the success of the business
+ - Serves as a discussion starter between technical and business interests 
+   regarding some finer aspects of the problem
+ - Lays out a framework for which data scientist can perform their work and
+   understand what constitutes success
+ - Provides a benchmark for evaluating project progess  
+ - It communicates to future technical staff (and perhaps future you) why 
+   certain decisions were made
+ - It servers as documentation necessary for compliance, risk and organization
+
+
+So what should be contained in the *FPS*?  A lot. It is probably easier to 
+state what it should not contain. It should not contain any technical explanation 
+of **how** the problem will be solved. The audience is a 
+non-technical one so any detailed discussion of what technologies will be used, 
+what modeling algorithms will be tried, what technical resources will be 
+consumed and how the model will be deployed should be considered out-of-scope. 
+
+The *FPS* **should** answer the **who**, **what**, **when** and 
+**why**. It should:
+
+ - Identify key roles: management, owners, stakeholders, users, SMEs, etc.
+ - Clearly articulate **why** the project is being considered
+ - Estimate benefits of the project 
+   - Identify any non-quantifiable benefits associated with project 
+ - Define what determines the project's success
+   - Define a success metric for the project, a single quantifiable, unambiguous 
+     metric, that will be used to determine if your project is a success. This is
+     not just a technical metrics, but one use at the managerial level. This of
+     this is how "the needle must move" by your solution
+   - Define (very precisely) the performance/power of the model or analysis that 
+     is necessary to achieve that success to achieve the success
+ - Estimate Risks
+   - What if the success metric is not met?
+   - What if the model performance metric is not met?
+ - Identify **who** the users of the model are and how the model will used 
+   - Discuss what changes have to happen within the organization to deploy the model
+   - Discuss risks to model deployment, (e.g. push-back by employees )
+ - Propose a timeline for delivery of your project
+   - **When** you will have preliminary results of model/analysis performance
+   - **When** you need or expect to have determined whether the model performance 
+   - How much time it will take to deploy the solutions.
+   
+In short, your *FPS* should provide an answer to all **non-technical** 
+questions based on the information you have at the onset of a project. The 
+*FPS* is liable to change over the course of development of a project.
+
+One approach for developing your template that might work well is to 
+start by revisiting the notes from the first lecture that identifies roles and 
+thier responsibilities. Your *FPS* should provide the information the 
+*data scientists* can provide to help the non-technical roles meet 
+those responsibilities.  
+
+The name, *Formal Problem Statement* is not an industry norm. It is something 
+that stuck with our organization (Decision Patterns). Other groups may call 
+this a *Work Statement*, *Model Requirements Document*, etc. Those who have 
+done formal project management may feel tempted to call this either a *Functional Requirements Document* or a *Business Requirements Document*. I wouldn't 
+necessarily argue with either claim, but do feel that it is something more 
+that is especially suited for the empirical nature of data science. 
+The *FRD* and *BRD* generally server as contracts of what will be accomplished.
+The *FPS* simply states: "given what we know of the problem, we will try and 
+we know we will succeed if/when ..."
+
+You do not have to adopt the "Formal Problem Statement" name. You should adopt 
+a name that is right for you and your oganization.

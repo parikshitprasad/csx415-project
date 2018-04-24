@@ -1,3 +1,5 @@
+.gitignore
+
 # History files
 .Rhistory
 .Rapp.history
@@ -31,3 +33,11 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+<<<<<<< HEAD
+=======
+
+# RMd files
+README.Rmd
+*_files/*
+
+>>>>>>> a8425af49beee614581b709c6844c6e066deb2a0
