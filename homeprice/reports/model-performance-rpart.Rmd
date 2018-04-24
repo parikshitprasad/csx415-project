@@ -1,0 +1,22 @@
+---
+title: "Home Price Estimation Model Performance - Recursive Partition and Regression"
+author: "Parikshit Prasad"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+### Recursive Partition and Regression model
+In this model, we create a regression tree based on living area, lot area and neighborhood. The metrics are shown below. This model performs better than our naive model.  
+
+```{r echo=FALSE, results='hide', message=FALSE}
+setwd("../")
+getwd()
+source("./src/homeprice-rpart.R")
+hist(trainRpartModel$percError[trainRpartModel$percError < quantile(trainRpartModel$percError, 0.95)],
+     50, main="Histogram of Absolute Percentage Error (LM - Living Area + Lot Area)",
+     xlab="Absolute Percentage Error",
+     ylab="Number of house price estimates")
+```
+
+* **Median Percentage Error**: `r round(errorMetrics$medianError, 2)` %
+* **Root Mean Squared Error**: `r errorMetrics$rmse` %

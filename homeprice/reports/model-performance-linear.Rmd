@@ -1,0 +1,22 @@
+---
+title: "Home Price Estimation Model Performance - Linear Regression"
+author: "Parikshit Prasad"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+### Linear Regression model
+In this model, we create linear regression model on living and lot areas for each neighborhood. The metrics are shown below. Surprisingly, the performance of this model is worse than the naive model based on price per square foot. This may be because we have fewer data within each neighborhood. Moreover, we are using very few features. We probably need to consider other features to get better results.
+
+```{r echo=FALSE, results='hide', message=FALSE}
+setwd("../")
+getwd()
+source("./src/homeprice-lm.R")
+hist(trainLinearModel$percError[trainLinearModel$percError < quantile(trainLinearModel$percError, 0.95)],
+     50, main="Histogram of Absolute Percentage Error (LM - Living Area + Lot Area)",
+     xlab="Absolute Percentage Error",
+     ylab="Number of house price estimates")
+```
+
+* **Median Percentage Error**: `r round(errorMetrics$medianError, 2)` %
+* **Root Mean Squared Error**: `r errorMetrics$rmse` %

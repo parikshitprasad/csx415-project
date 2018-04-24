@@ -1,0 +1,18 @@
+---
+title: "Home Price Estimation - Assets"
+author: "Parikshit Prasad"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+### Assets
+The main assets related to this project are listed below: 
+
+* Project performance - [project-performance.rmd](./reports/project-performance.Rmd)
+This has the overall performance of the model. 
+
+* Model performance - Linear Regression [model-performance-lm.rmd](./reports/model-performance-lm.Rmd]
+This shows the performance of linear regression model
+
+* Model performance - Recursive Partition and Regression [model-performance-rpart.md](./reports/model-performance-rpart.Rmd)
+This shows the performance of model generated using rpart. 
